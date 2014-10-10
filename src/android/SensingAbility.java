@@ -37,9 +37,9 @@ public class SensingAbility extends CordovaPlugin {
             try {
                 o.put("vendor", s.getVendor());
                 o.put("name", s.getName());
-                o.put("type", checkType(s.getType()));
+                o.put("sensor_type", checkType(s.getType()));
                 o.put("version", s.getVersion());
-                o.put("maxRange", s.getMaximumRange());
+                o.put("max_range", s.getMaximumRange());
                 o.put("power", s.getPower());
                 o.put("resolution", s.getResolution());
                 rtnJSON.put(o);
