@@ -20,7 +20,7 @@ public class SensingAbility extends CordovaPlugin {
 
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         Sensors = (SensorManager) cordova.getActivity().getSystemService( Context.SENSOR_SERVICE );
-        if (action.equals("getSensorTypes")) {
+        if (action.equals("getSensors")) {
             callbackContext.success(poolAllSensors());
         }
         else {

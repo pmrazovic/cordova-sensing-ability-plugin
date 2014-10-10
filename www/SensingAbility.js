@@ -6,14 +6,14 @@ var argscheck = require('cordova/argscheck'),
 
 function SensingAbility() {
     this.available = false;
-    this.sensorTypes = null;
+    this.sensors = null;
 
     var me = this;
 
     channel.onCordovaReady.subscribe(function() {
-        me.getSensorTypes(function(result) {
+        me.getSensors(function(result) {
             me.available = true;
-            me.sensorTypes = result;
+            me.sensors = result;
         },function(e) {
             me.available = false;
             utils.alert("[ERROR] Error initializing Cordova: " + e);
@@ -21,8 +21,8 @@ function SensingAbility() {
     });
 }
 
-SensingAbility.prototype.getSensorTypes = function(successCallback, errorCallback) {
-    exec(successCallback, errorCallback, "SensingAbility", "getSensorTypes", []);
+SensingAbility.prototype.getSensors = function(successCallback, errorCallback) {
+    exec(successCallback, errorCallback, "SensingAbility", "getSensors", []);
 };
 
 module.exports = new SensingAbility();
